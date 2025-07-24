@@ -1,20 +1,29 @@
-import React from 'react';
-import { ArrowRight, Sparkles } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import heroImage from '@/assets/hero-bg.jpg';
+import React from "react";
+import { ArrowRight, Sparkles } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import heroImage from "@/assets/hero-bg.jpg";
+
+const stats = [
+  { value: "50K+", label: "Happy Customers" },
+  { value: "99%", label: "Satisfaction Rate" },
+  { value: "24/7", label: "Support" },
+];
 
 const Hero: React.FC = () => {
   const scrollToProducts = () => {
-    const productsSection = document.getElementById('products');
+    const productsSection = document.getElementById("products");
     if (productsSection) {
-      productsSection.scrollIntoView({ behavior: 'smooth' });
+      productsSection.scrollIntoView();
     }
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* Background Image with Overlay */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
@@ -27,7 +36,9 @@ const Hero: React.FC = () => {
           {/* Badge */}
           <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-8 animate-fade-in">
             <Sparkles className="h-4 w-4 text-white" />
-            <span className="text-white text-sm font-medium">Premium Tech Collection</span>
+            <span className="text-white text-sm font-medium">
+              Premium Tech Collection
+            </span>
           </div>
 
           {/* Main Headline */}
@@ -40,7 +51,8 @@ const Hero: React.FC = () => {
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Experience cutting-edge technology with our curated collection of premium devices designed for the modern lifestyle.
+            Experience cutting-edge technology with our curated collection of
+            premium devices designed for the modern lifestyle.
           </p>
 
           {/* CTA Buttons */}
@@ -54,7 +66,7 @@ const Hero: React.FC = () => {
               Shop Now
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
-            
+
             <Button
               variant="outline"
               size="xl"
@@ -66,18 +78,14 @@ const Hero: React.FC = () => {
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 mt-16 max-w-md mx-auto">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white">50K+</div>
-              <div className="text-white/70 text-sm">Happy Customers</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white">99%</div>
-              <div className="text-white/70 text-sm">Satisfaction Rate</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white">24/7</div>
-              <div className="text-white/70 text-sm">Support</div>
-            </div>
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-3xl font-bold text-white">
+                  {stat.value}
+                </div>
+                <div className="text-white/70 text-sm">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
