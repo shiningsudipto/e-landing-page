@@ -1,5 +1,35 @@
-import React from 'react';
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import React from "react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
+import { navLinks } from "@/lib/constants/lists";
+
+const footerLinks = [
+  { label: "Privacy Policy", href: "#" },
+  { label: "Terms of Service", href: "#" },
+  { label: "Return Policy", href: "#" },
+  { label: "FAQ", href: "#" },
+  { label: "Shipping Info", href: "#" },
+];
+
+const inlineFooterLinks = [
+  { label: "Privacy", href: "#" },
+  { label: "Terms", href: "#" },
+  { label: "Cookies", href: "#" },
+];
+
+const socialLinks = [
+  { icon: <Facebook className="size-5" />, href: "#" },
+  { icon: <Twitter className="size-5" />, href: "#" },
+  { icon: <Instagram className="size-5" />, href: "#" },
+  { icon: <Linkedin className="size-5" />, href: "#" },
+];
 
 const Footer: React.FC = () => {
   return (
@@ -12,23 +42,22 @@ const Footer: React.FC = () => {
               TechStore
             </h3>
             <p className="text-primary-foreground/80 leading-relaxed">
-              Your trusted partner for premium technology products. We bring you the latest innovations in tech with exceptional quality and service.
+              Your trusted partner for premium technology products. We bring you
+              the latest innovations in tech with exceptional quality and
+              service.
             </p>
-            
+
             {/* Social Links */}
             <div className="flex space-x-4 pt-4">
-              <a href="#" className="text-primary-foreground/60 hover:text-white transition-colors">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-primary-foreground/60 hover:text-white transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-primary-foreground/60 hover:text-white transition-colors">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-primary-foreground/60 hover:text-white transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </a>
+              {socialLinks.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.href}
+                  className="text-primary-foreground/60 hover:text-white transition-colors"
+                >
+                  {item.icon}
+                </a>
+              ))}
             </div>
           </div>
 
@@ -36,26 +65,16 @@ const Footer: React.FC = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Quick Links</h4>
             <ul className="space-y-2">
-              <li>
-                <a href="#home" className="text-primary-foreground/80 hover:text-white transition-colors">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#products" className="text-primary-foreground/80 hover:text-white transition-colors">
-                  Products
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="text-primary-foreground/80 hover:text-white transition-colors">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-primary-foreground/80 hover:text-white transition-colors">
-                  Contact
-                </a>
-              </li>
+              {navLinks.map((link, index) => (
+                <li key={index}>
+                  <a
+                    href={link.href}
+                    className="text-primary-foreground/80 hover:text-white transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -63,31 +82,16 @@ const Footer: React.FC = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Support</h4>
             <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-primary-foreground/80 hover:text-white transition-colors">
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-primary-foreground/80 hover:text-white transition-colors">
-                  Terms of Service
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-primary-foreground/80 hover:text-white transition-colors">
-                  Return Policy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-primary-foreground/80 hover:text-white transition-colors">
-                  FAQ
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-primary-foreground/80 hover:text-white transition-colors">
-                  Shipping Info
-                </a>
-              </li>
+              {footerLinks.map((link, index) => (
+                <li key={index}>
+                  <a
+                    href={link.href}
+                    className="text-primary-foreground/80 hover:text-white transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -97,17 +101,22 @@ const Footer: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-primary-foreground/60" />
-                <span className="text-primary-foreground/80">support@techstore.com</span>
+                <span className="text-primary-foreground/80">
+                  support@techstore.com
+                </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-primary-foreground/60" />
-                <span className="text-primary-foreground/80">+1 (555) 123-4567</span>
+                <span className="text-primary-foreground/80">
+                  +880 17111111111
+                </span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-primary-foreground/60" />
                 <span className="text-primary-foreground/80">
-                  123 Tech Street<br />
-                  San Francisco, CA 94105
+                  1 Number C&B Pol
+                  <br />
+                  Barishal, Bangladesh
                 </span>
               </div>
             </div>
@@ -117,18 +126,18 @@ const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="border-t border-primary-foreground/20 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between">
           <p className="text-primary-foreground/60 text-sm">
-            © 2024 TechStore. All rights reserved.
+            © 2025 TechStore. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-primary-foreground/60 hover:text-white text-sm transition-colors">
-              Privacy
-            </a>
-            <a href="#" className="text-primary-foreground/60 hover:text-white text-sm transition-colors">
-              Terms
-            </a>
-            <a href="#" className="text-primary-foreground/60 hover:text-white text-sm transition-colors">
-              Cookies
-            </a>
+            {inlineFooterLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.href}
+                className="text-primary-foreground/60 hover:text-white text-sm transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
         </div>
       </div>

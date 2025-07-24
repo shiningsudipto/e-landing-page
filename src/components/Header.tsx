@@ -4,13 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 import CartModal from "./CartModal";
 import { Link } from "react-router-dom";
-
-const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "Products", href: "#products" },
-  { name: "About", href: "#about" },
-  { name: "Contact", href: "#contact" },
-];
+import { navLinks } from "@/lib/constants/lists";
 
 const Header: React.FC = () => {
   const { state } = useCart();

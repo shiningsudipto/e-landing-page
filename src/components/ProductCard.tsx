@@ -1,9 +1,9 @@
-import React from 'react';
-import { Plus, Star } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Product } from '@/context/CartContext';
-import { useCart } from '@/context/CartContext';
-import { useToast } from '@/hooks/use-toast';
+import React from "react";
+import { Plus, Star } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Product } from "@/context/CartContext";
+import { useCart } from "@/context/CartContext";
+import { useToast } from "@/hooks/use-toast";
 
 interface ProductCardProps {
   product: Product;
@@ -41,24 +41,20 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             <Star
               key={i}
               className={`h-4 w-4 ${
-                i < 4 ? 'text-yellow-400 fill-current' : 'text-muted-foreground'
+                i < 4 ? "text-yellow-400 fill-current" : "text-muted-foreground"
               }`}
             />
           ))}
           <span className="text-sm text-muted-foreground ml-2">(4.0)</span>
         </div>
-
-        {/* Product Name */}
         <h3 className="text-lg font-semibold text-card-foreground mb-2 line-clamp-2 group-hover:text-accent transition-colors">
           {product.name}
         </h3>
-
-        {/* Description */}
         <p className="text-muted-foreground text-sm mb-4 line-clamp-2 leading-relaxed">
           {product.description}
         </p>
 
-        {/* Price and Add to Cart */}
+        {/* footer */}
         <div className="flex items-center justify-between">
           <div className="flex flex-col">
             <span className="text-2xl font-bold text-card-foreground">
