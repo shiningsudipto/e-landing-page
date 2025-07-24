@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* E-commerce Design System - Modern, Premium Aesthetic */
+
+@layer base {
+  :root {
+    /* Base colors - Clean, modern palette */
+    --background: 0 0% 100%;
+    --foreground: 215 25% 15%;
+
+    /* Card system - Elevated surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    /* Popover/Modal system */
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    /* Primary brand colors - Deep, sophisticated blue */
+    --primary: 215 85% 25%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 215 85% 20%;
+
+    /* Secondary - Elegant gray */
+    --secondary: 215 15% 95%;
+    --secondary-foreground: 215 25% 25%;
+
+    /* Muted tones */
+    --muted: 215 15% 97%;
+    --muted-foreground: 215 15% 45%;
+
+    /* Accent - Vibrant blue for CTAs */
+    --accent: 210 85% 55%;
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 210 85% 50%;
+
+    /* Status colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 75% 45%;
+    --success-foreground: 0 0% 100%;
+
+    /* Border and input */
+    --border: 215 15% 92%;
+    --input: 215 15% 95%;
+    --ring: 215 85% 25%;
+
+    /* Design tokens */
+    --radius: 0.75rem;
+
+    /* Gradients - Modern, sophisticated */
+    --gradient-primary: linear-gradient(135deg, hsl(215 85% 25%), hsl(210 85% 35%));
+    --gradient-hero: linear-gradient(135deg, hsl(215 85% 25%) 0%, hsl(210 85% 35%) 50%, hsl(205 85% 45%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(215 15% 98%) 100%);
+    
+    /* Shadows - Elegant depth */
+    --shadow-card: 0 4px 6px -1px hsl(215 25% 15% / 0.1), 0 2px 4px -1px hsl(215 25% 15% / 0.06);
+    --shadow-elevated: 0 10px 15px -3px hsl(215 25% 15% / 0.1), 0 4px 6px -2px hsl(215 25% 15% / 0.05);
+    --shadow-floating: 0 20px 25px -5px hsl(215 25% 15% / 0.1), 0 10px 10px -5px hsl(215 25% 15% / 0.04);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Base colors - Dark theme */
+    --background: 215 25% 8%;
+    --foreground: 0 0% 95%;
+
+    /* Card system - Dark surfaces */
+    --card: 215 25% 10%;
+    --card-foreground: 0 0% 95%;
+
+    /* Popover/Modal system */
+    --popover: 215 25% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Primary brand colors - Lighter for dark mode */
+    --primary: 210 85% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 210 85% 40%;
+
+    /* Secondary - Dark gray */
+    --secondary: 215 25% 15%;
+    --secondary-foreground: 0 0% 85%;
+
+    /* Muted tones */
+    --muted: 215 25% 12%;
+    --muted-foreground: 215 15% 55%;
+
+    /* Accent - Bright blue for CTAs */
+    --accent: 210 85% 55%;
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 210 85% 60%;
+
+    /* Status colors */
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 75% 50%;
+    --success-foreground: 0 0% 100%;
+
+    /* Border and input */
+    --border: 215 25% 20%;
+    --input: 215 25% 15%;
+    --ring: 210 85% 45%;
+
+    /* Gradients - Dark mode versions */
+    --gradient-primary: linear-gradient(135deg, hsl(210 85% 45%), hsl(205 85% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 85% 45%) 0%, hsl(205 85% 55%) 50%, hsl(200 85% 65%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(215 25% 10%) 0%, hsl(215 25% 12%) 100%);
+    
+    /* Shadows - Darker for dark mode */
+    --shadow-card: 0 4px 6px -1px hsl(0 0% 0% / 0.3), 0 2px 4px -1px hsl(0 0% 0% / 0.2);
+    --shadow-elevated: 0 10px 15px -3px hsl(0 0% 0% / 0.3), 0 4px 6px -2px hsl(0 0% 0% / 0.2);
+    --shadow-floating: 0 20px 25px -5px hsl(0 0% 0% / 0.4), 0 10px 10px -5px hsl(0 0% 0% / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+}
