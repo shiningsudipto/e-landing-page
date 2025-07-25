@@ -12,20 +12,23 @@ export interface CartItem extends Product {
   quantity: number;
 }
 
-interface CartState {
+export interface CartState {
   items: CartItem[];
   total: number;
   itemCount: number;
 }
 
-type CartAction =
+export type CartAction =
   | { type: "ADD_ITEM"; payload: Product }
   | { type: "REMOVE_ITEM"; payload: string }
   | { type: "UPDATE_QUANTITY"; payload: { id: string; quantity: number } }
   | { type: "CLEAR_CART" }
   | { type: "LOAD_CART"; payload: CartState };
 
-const cartReducer = (state: CartState, action: CartAction): CartState => {
+export const cartReducer = (
+  state: CartState,
+  action: CartAction
+): CartState => {
   switch (action.type) {
     case "ADD_ITEM": {
       const existingItems = state.items.find(

@@ -240,7 +240,8 @@ const Checkout: React.FC = () => {
                   </div>
 
                   <Button
-                    type="submit"
+                    data-testid="processing-button"
+                    type="button"
                     variant="hero"
                     size="lg"
                     className="w-full"
