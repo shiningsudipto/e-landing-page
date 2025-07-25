@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Package } from "lucide-react";
-import ProductCard from "./ProductCard";
+import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
-import Loader from "./shared/Loader";
+import Loader from "@/components/shared/Loader";
 
 const ProductGrid: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
