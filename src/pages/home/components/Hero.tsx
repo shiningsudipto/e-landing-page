@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative md:min-h-screen py-24 md:py-0 flex items-center justify-center overflow-hidden"
     >
       {/* Background Image with Overlay */}
       <div
@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             Discover the
             <span className="block bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
               Future of Tech
